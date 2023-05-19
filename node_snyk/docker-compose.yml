@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  nodeapp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+      secrets:
+        - npmrc
+      tags:
+        - 'datastemalux/snyk-app:latest'
+    image: 'datastemalux/snyk-app'
+    ports:
+      - 8080:8080
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/ok"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+
+secrets:
+  npmrc:
+    file: ./.npmrc
