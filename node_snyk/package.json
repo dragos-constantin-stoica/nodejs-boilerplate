@@ -16,7 +16,7 @@
     "fastify-healthcheck": "^4.x",
     "fastify-routes": ">3.1",
     "@fastify/sensible": "^4.x",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.2",
     "pino": "^7.6.2",
     "pino-pretty": "^7.3.0"
   },
